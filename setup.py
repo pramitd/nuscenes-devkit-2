@@ -7,14 +7,7 @@ with open('./README.md', 'r') as fh:
 
 # Since nuScenes 2.0 the requirements are stored in separate files.
 with open('setup/requirements.txt') as f:
-    req_paths = f.read().splitlines()
-requirements = []
-for req_path in req_paths:
-    if req_path.startswith('#'):
-        continue
-    req_path = req_path.replace('-r ', '')
-    with open(req_path) as f:
-        requirements += f.read().splitlines()
+    requirements += f.read().splitlines()
 
 
 def get_dirlist(_rootdir):
